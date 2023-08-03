@@ -1,0 +1,18 @@
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Service Name</th>
+      <th>Service ID</th>
+      <!-- Add more columns here if needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @services.each do |service| %>
+      <tr>
+        <td><%= service["service"]["name"] %></td>
+        <td><%= service["service"]["id"] %></td>
+        <!-- Add more cells here to display additional information -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  service_id: MyString
+  status: MyString
+  custom_start_time: 2023-08-04 02:11:15
+  custom_stop_time: 2023-08-04 02:11:15
+
+two:
+  name: MyString
+  service_id: MyString
+  status: MyString
+  custom_start_time: 2023-08-04 02:11:15
+  custom_stop_time: 2023-08-04 02:11:15

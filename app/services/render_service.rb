@@ -7,7 +7,7 @@ class RenderService
   
       request = Net::HTTP::Get.new(url)
       request["accept"] = 'application/json'
-      request["authorization"] = "Bearer #{ENV['RENDER_API_KEY']}"
+      request["authorization"] = "Bearer #{ENV['RENDER_API_KEY'] || Rails.application.credentials.dig(:RENDER_API_KEY) }"
   
       response = http.request(request)
       render_data = JSON.parse(response.read_body)
@@ -20,7 +20,7 @@ class RenderService
 
         request = Net::HTTP::Post.new(url)
         request["accept"] = 'application/json'
-        request["authorization"] = "Bearer #{ENV['RENDER_API_KEY']}"
+        request["authorization"] = "Bearer #{ENV['RENDER_API_KEY'] || Rails.application.credentials.dig(:RENDER_API_KEY) }"
 
         response = http.request(request)        
         response.read_body
@@ -33,7 +33,7 @@ class RenderService
 
         request = Net::HTTP::Post.new(url)
         request["accept"] = 'application/json'
-        request["authorization"] = "Bearer #{ENV['RENDER_API_KEY']}"
+        request["authorization"] = "Bearer #{ENV['RENDER_API_KEY'] || Rails.application.credentials.dig(:RENDER_API_KEY)}"
 
         response = http.request(request)        
         response.read_body

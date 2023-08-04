@@ -3,7 +3,7 @@
     <tr>
       <th>Service Name</th>
       <th>Service ID</th>
-      <!-- Add more columns here if needed -->
+      <th colspan="2">Actions</th>    
     </tr>
   </thead>
   <tbody>
@@ -11,7 +11,12 @@
       <tr>
         <td><%= service["service"]["name"] %></td>
         <td><%= service["service"]["id"] %></td>
-        <!-- Add more cells here to display additional information -->
+        <td>
+            <div class="btn-group">
+                <%= button_to "Start", { action: :start_service, id: service["service"]["id"] }, method: :post %>
+                <%= button_to "Stop", { action: :stop_service, id: service["service"]["id"] }, method: :post %>
+            </div>            
+        </td>
       </tr>
     <% end %>
   </tbody>

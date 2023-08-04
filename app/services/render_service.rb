@@ -10,7 +10,7 @@ class RenderService
       request["authorization"] = "Bearer #{ENV['RENDER_API_KEY'] || Rails.application.credentials.dig(:RENDER_API_KEY) }"
   
       response = http.request(request)
-      render_data = JSON.parse(response.read_body)
+      JSON.parse(response.read_body)
     end
 
     def self.start_service(service_id)
@@ -23,7 +23,7 @@ class RenderService
         request["authorization"] = "Bearer #{ENV['RENDER_API_KEY'] || Rails.application.credentials.dig(:RENDER_API_KEY) }"
 
         response = http.request(request)        
-        response.read_body
+        response
     end
     
     def self.stop_service(service_id)
@@ -36,6 +36,6 @@ class RenderService
         request["authorization"] = "Bearer #{ENV['RENDER_API_KEY'] || Rails.application.credentials.dig(:RENDER_API_KEY)}"
 
         response = http.request(request)        
-        response.read_body
+        response
     end
 end

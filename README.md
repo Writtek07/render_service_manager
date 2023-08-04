@@ -3,10 +3,8 @@
 * Start the rails server once, schedule the jobs, update the crontabs and done. Close your rails app and relax, all your services will start and stop when scheduled to. This saves a lot of money as every other service on render is billed based on hours of usage.
 * This entire setup will be done locally for security purposes, still, we will think of a way to make this secure on cloud in future releases.
 
-## Things you may want to cover:
 
 ## System dependencies 
-
 # Ruby version - `3.2.1`
 # Node version - `v18.15.0`
 # Rails version - `7.0.6`

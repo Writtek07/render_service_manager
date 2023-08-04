@@ -38,8 +38,7 @@ class ServicesController < ApplicationController
     service_id = params[:id]
     service = Service.find_by(service_id: service_id)
     RenderService.stop_service(service_id)
-    redirect_to root_path
-    flash[:error] = "Service #{service.name} stopped successfully."
+    redirect_to root_path, error: "Service #{service.name} stopped successfully."
   end
 
   def update_schedule_file_on_save(id, custom_start_time, custom_stop_time)
@@ -47,8 +46,8 @@ class ServicesController < ApplicationController
     schedule_content = File.read(schedule_rb_path)
 
     # Update the custom start and stop times for the service in the schedule.rb file
-    schedule_content.gsub!(/(every 1\.day, at: ')(.*)(' do\s+rake 'services_#{id}:start')/, "\\1#{custom_start_time}\\3")
-    schedule_content.gsub!(/(every 1\.day, at: ')(.*)(' do\s+rake 'services_#{id}:stop')/, "\\1#{custom_stop_time}\\3")
+    schedule_content.gsub!(/(every :day, at: ')(.*)(' do\s+rake 'services_#{id}:start')/, "\\1#{custom_start_time.strftime("%R")}\\3")
+    schedule_content.gsub!(/(every :day, at: ')(.*)(' do\s+rake 'services_#{id}:stop')/, "\\1#{custom_stop_time.strftime("%R")}\\3")
 
     # Write the updated contents back to the schedule.rb file
     File.write(schedule_rb_path, schedule_content)
@@ -78,8 +77,8 @@ class ServicesController < ApplicationController
       else
         service.status = 0
       end
-      service.custom_start_time ||= '09:00 am' # Set default start time if not present
-      service.custom_stop_time ||= '06:00 pm'  # Set default stop time if not present
+      service.custom_start_time ||= ENV['DEFAULT_START_TIME'] # Set default start time if not present
+      service.custom_stop_time ||= ENV['DEFAULT_STOP_TIME']  # Set default stop time if not present
       service.save
 
       @services << service

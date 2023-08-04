@@ -16,11 +16,11 @@ class Service < ApplicationRecord
         # Generate new lines for the new service and append them to the schedule_content
         new_lines = ""
         new_lines << "\n\n" unless schedule_content.end_with?("\n\n") || schedule_content.empty?
-        new_lines << "every 1.day, at: '#{custom_start_time.to_s}' do\n"
+        new_lines << "every :day, at: '#{custom_start_time.strftime("%I:%M %p")}' do\n"
         new_lines << "  rake 'services_#{id}:start'\n"
         new_lines << "end\n"
         new_lines << "\n"
-        new_lines << "every 1.day, at: '#{custom_stop_time.to_s}' do\n"
+        new_lines << "every :day, at: '#{custom_stop_time.strftime("%I:%M %p")}' do\n"
         new_lines << "  rake 'services_#{id}:stop'\n"
         new_lines << "end\n"
     

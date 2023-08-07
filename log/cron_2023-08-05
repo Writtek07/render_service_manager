@@ -1,0 +1,118 @@
+================== End of start service call for mimis_invoice! =================
+rake aborted!
+Don't know how to build task '02:13:30' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for Daily Fee created sms job! =================
+rake aborted!
+Don't know how to build task '17:49:18' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for sidekiq-worker! =================
+rake aborted!
+Don't know how to build task '17:49:18' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for Daily Fee created sms job! =================
+rake aborted!
+Don't know how to build task '17:49:18' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for sidekiq-worker! =================
+rake aborted!
+Don't know how to build task '17:49:18' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for Daily sms service to admin! =================
+rake aborted!
+Don't know how to build task '18:15:57' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+ActiveRecord::DatabaseConnectionError: There is an issue connecting to your database with your username/password, username: render_service_manager.
+
+Please check your database configuration to ensure the username/password are valid.
+/code/render_service_manager/lib/tasks/services_cron_task.rake:42:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+
+Caused by:
+PG::ConnectionBad: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "render_service_manager"
+/code/render_service_manager/lib/tasks/services_cron_task.rake:42:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+Tasks: TOP => services_3:stop
+(See full trace by running task with --trace)
+================== End of stop service call for Daily sms service to admin at 2023-08-05 19:32:48 +0530 =================
+================== End of stop service call for Daily sms service to admin at 2023-08-05 19:35:11 +0530 =================
+rake aborted!
+Don't know how to build task '19:35:11' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for Daily sms service to admin at 2023-08-05 19:56:26 +0530 =================
+rake aborted!
+Don't know how to build task '19:56:26' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for Daily sms service to admin at 2023-08-05 20:15:00 +0530 =================
+rake aborted!
+Don't know how to build task '20:15:00' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for mimis_invoice at 2023-08-05 20:20:43 +0530 =================
+rake aborted!
+Don't know how to build task '20:20:43' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for mimis_invoice at 2023-08-05 20:20:43 +0530 =================
+rake aborted!
+Don't know how to build task '20:20:43' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for Daily Fee created sms job at 2023-08-05 20:20:43 +0530 =================
+rake aborted!
+Don't know how to build task '20:20:43' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for sidekiq-worker at 2023-08-05 20:20:43 +0530=================
+rake aborted!
+Don't know how to build task '20:20:43' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for Daily Fee created sms job at 2023-08-05 20:20:43 +0530 =================
+rake aborted!
+Don't know how to build task '20:20:43' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for sidekiq-worker at 2023-08-05 20:20:43 +0530 =================
+rake aborted!
+Don't know how to build task '20:20:43' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for Daily sms service to admin at 2023-08-05 20:20:43 +0530 =================
+rake aborted!
+Don't know how to build task '20:20:43' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for Daily sms service to admin at 2023-08-05 20:20:43 +0530 =================
+rake aborted!
+Don't know how to build task '20:20:43' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)

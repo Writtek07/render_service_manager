@@ -1,0 +1,36 @@
+================== End of start service call for mimis_invoice at 2023-08-07 03:27:07 +0530 =================
+rake aborted!
+Don't know how to build task '03:27:07' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for mimis_invoice at 2023-08-07 03:27:07 +0530 =================
+rake aborted!
+Don't know how to build task '03:27:07' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for Daily Fee created sms job at 2023-08-07 17:55:36 +0530 =================
+rake aborted!
+Don't know how to build task '17:55:36' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of start service call for sidekiq-worker at 2023-08-07 17:55:36 +0530=================
+rake aborted!
+Don't know how to build task '17:55:36' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for Daily Fee created sms job at 2023-08-07 17:55:36 +0530 =================
+rake aborted!
+Don't know how to build task '17:55:36' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== End of stop service call for sidekiq-worker at 2023-08-07 17:55:36 +0530 =================
+rake aborted!
+Don't know how to build task '17:55:36' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)

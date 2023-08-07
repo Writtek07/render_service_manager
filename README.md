@@ -1,5 +1,5 @@
 # ABOUT
-* This is a Render service management system which fetches all your services hosted on render.com and gives you the flexiblity to schedule the start and suspend of indiviual jobs using cron jobs in your local system. 
+* This is a Render service management system which fetches all your services hosted on [render](http://www.render.com/) and gives you the flexiblity to schedule the start and suspend of indiviual jobs using cron jobs in your local system. 
 * Start the rails server once, schedule the jobs, update the crontabs and done. Close your rails app and relax, all your services will start and stop when scheduled to. This saves a lot of money as every other service on render is billed based on hours of usage.
 * This entire setup will be done locally for security purposes, still, we will think of a way to make this secure on cloud in future releases.
 

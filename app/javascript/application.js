@@ -2,3 +2,5 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import * as bootstrap from "bootstrap"
+
+// Keep autoloading the index page {Tested works}

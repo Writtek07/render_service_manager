@@ -23,7 +23,7 @@ class ServicesController < ApplicationController
       update_schedule_file_on_save(service.id, service.custom_start_time, service.custom_stop_time)
     end
     
-    redirect_to services_path, notice: 'Schedule updated successfully.'
+    redirect_to root_path, notice: 'Schedule updated successfully.'
   end
 
   def start_service
@@ -61,7 +61,7 @@ class ServicesController < ApplicationController
     script_path = Rails.root.join('lib', 'update_crontab_script.rb')
     system("ruby #{script_path}")
 
-    redirect_to services_path, notice: 'Crontab updated successfully'
+    redirect_to root_path, notice: 'Crontab updated successfully'
   end
 
   private

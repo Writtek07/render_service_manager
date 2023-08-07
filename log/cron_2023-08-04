@@ -26,3 +26,116 @@ JSON::ParserError: unexpected token at ''
 /home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
 Tasks: TOP => services_2:start
 (See full trace by running task with --trace)
+rake aborted!
+ActiveRecord::DatabaseConnectionError: There is an issue connecting to your database with your username/password, username: render_service_manager.
+
+Please check your database configuration to ensure the username/password are valid.
+/code/render_service_manager/lib/tasks/services_cron_task.rake:38:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+
+Caused by:
+PG::ConnectionBad: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "render_service_manager"
+/code/render_service_manager/lib/tasks/services_cron_task.rake:38:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+Tasks: TOP => services_3:start
+(See full trace by running task with --trace)
+================== Executed at 2023-08-04 15:06:30 +0530! ===============
+rake aborted!
+ActiveRecord::DatabaseConnectionError: There is an issue connecting to your database with your username/password, username: render_service_manager.
+
+Please check your database configuration to ensure the username/password are valid.
+/code/render_service_manager/lib/tasks/services_cron_task.rake:47:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+
+Caused by:
+PG::ConnectionBad: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "render_service_manager"
+/code/render_service_manager/lib/tasks/services_cron_task.rake:47:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+Tasks: TOP => services_3:stop
+(See full trace by running task with --trace)
+================== Executed at 2023-08-04 15:06:30 +0530! ===============
+rake aborted!
+ActiveRecord::DatabaseConnectionError: There is an issue connecting to your database with your username/password, username: render_service_manager.
+
+Please check your database configuration to ensure the username/password are valid.
+/code/render_service_manager/lib/tasks/services_cron_task.rake:64:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+
+Caused by:
+PG::ConnectionBad: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "render_service_manager"
+/code/render_service_manager/lib/tasks/services_cron_task.rake:64:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+Tasks: TOP => services_4:stop
+(See full trace by running task with --trace)
+================== Executed at 2023-08-04 15:06:30 +0530! ===============
+rake aborted!
+ActiveRecord::DatabaseConnectionError: There is an issue connecting to your database with your username/password, username: render_service_manager.
+
+Please check your database configuration to ensure the username/password are valid.
+/code/render_service_manager/lib/tasks/services_cron_task.rake:21:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+
+Caused by:
+PG::ConnectionBad: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "render_service_manager"
+/code/render_service_manager/lib/tasks/services_cron_task.rake:21:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+Tasks: TOP => services_2:start
+(See full trace by running task with --trace)
+rake aborted!
+ActiveRecord::DatabaseConnectionError: There is an issue connecting to your database with your username/password, username: render_service_manager.
+
+Please check your database configuration to ensure the username/password are valid.
+/code/render_service_manager/lib/tasks/services_cron_task.rake:4:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+
+Caused by:
+PG::ConnectionBad: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "render_service_manager"
+/code/render_service_manager/lib/tasks/services_cron_task.rake:4:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+Tasks: TOP => services_1:start
+(See full trace by running task with --trace)
+================== Executed at 2023-08-04 15:06:30 +0530! ===============
+rake aborted!
+ActiveRecord::DatabaseConnectionError: There is an issue connecting to your database with your username/password, username: render_service_manager.
+
+Please check your database configuration to ensure the username/password are valid.
+/code/render_service_manager/lib/tasks/services_cron_task.rake:13:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+
+Caused by:
+PG::ConnectionBad: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "render_service_manager"
+/code/render_service_manager/lib/tasks/services_cron_task.rake:13:in `block (2 levels) in <main>'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+Tasks: TOP => services_1:stop
+(See full trace by running task with --trace)
+================== Executed at 2023-08-04 15:06:30 +0530! ===============
+================== Executed at 2023-08-04 18:53:51 +0530! ===============
+rake aborted!
+Don't know how to build task '18:53:51' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== Executed at 2023-08-04 18:53:51 +0530! ===============
+rake aborted!
+Don't know how to build task '18:53:51' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+================== Executed at 2023-08-04 18:53:51 +0530! ===============
+rake aborted!
+Don't know how to build task '18:53:51' (See the list of available tasks with `rake --tasks`)
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `load'
+/home/writtek/.rbenv/versions/3.2.1/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)

@@ -46,12 +46,12 @@ every :day, at: '17:03' do
 end
 
 
-every :day, at: '09:20' do
+every :day, at: '09:15' do
   rake 'services_4:start'
   runner "puts '================== End of start service call for mimis_invoice at #{current_time} ================='"
 end
 
-every :day, at: '17:30' do
+every :day, at: '18:00' do
   rake 'services_4:stop'
   runner "puts '================== End of stop service call for mimis_invoice at #{current_time} ================='"
 end

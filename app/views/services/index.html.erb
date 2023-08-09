@@ -25,52 +25,53 @@
                                         <th>Name</th>
                                         <th>Service ID</th>                                        
                                         <th>Status</th>
-                                        <th>Update Schedule</th>
-                                        <th>Actions</th>
+                                        <th>Current Schedule</th>                                        
+                                        <th class="text-center">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <% @services.each do |service| %>
                                         <tr>
                                             <td><%= service.name %></td>
-                                            <td><%= service.service_id %></td>                                            
+                                            <td><%= service.service_id %></td>                                                                                        
                                             <td>                                                
                                                 <% if service.active? %>
-                                                    <span class="badge badge-success"><%= service.status.capitalize %></span>
+                                                    <span class="badge badge-success">Online</span>
                                                 <% else %>
-                                                    <span class="badge badge-danger"><%= service.status.capitalize %></span>
+                                                    <span class="badge badge-danger">Offline</span>
                                                 <% end %>
                                             </td>
                                             <td>
-                                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%= service.id %>" aria-controls="offcanvasRight">Schedule</button>
-
-                                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight<%= service.id %>" aria-labelledby="offcanvasRightLabel">
-                                                    <div class="offcanvas-header">
-                                                        <h5 id="offcanvasRightLabel">Service name: <%= service.name.capitalize %></h5>
-                                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="offcanvas-body">                                                        
-                                                        <%= form_tag update_schedule_services_path, method: :put, class: 'form-group', id: 'schedule-form' do %>
-                    
-                                                            <%= hidden_field_tag :time_zone_offset, nil %>
-
-                                                            <%= hidden_field_tag "services[#{service.id}][name]", service.name %>
-                                                            <%= hidden_field_tag "services[#{service.id}][service_id]", service.service_id %>
-                                                            <div class="text-center mb-2">
-                                                                <%= label_tag :Start_time, nil, class: 'form-label' %>
-                                                                <%= time_field_tag "services[#{service.id}][custom_start_time]", service.custom_start_time.strftime('%H:%M'), class: 'form-control text-center' %>
-                                                            </div>
-                                                            <div class="text-center">
-                                                                <%= label_tag :End_time, nil, class: 'form-label' %>
-                                                                <%= time_field_tag "services[#{service.id}][custom_stop_time]", service.custom_stop_time.strftime('%H:%M'), class: 'form-control text-center' %>
-                                                            </div>
-                                                            <div class="text-center"><%= submit_tag 'Update Schedule', class: 'btn btn-sm btn-outline-primary mt-4' %></div>                                                        
-                                                        <% end %>
-                                                    </div>
-                                                </div>
+                                                <%= service.custom_start_time.strftime("%I:%M %p") %> to <%= service.custom_stop_time.strftime("%I:%M %p") %> 
                                             </td>
                                             <td>
                                                 <div class="btn-group">
+                                                    <button class="btn btn-sm btn-outline-primary me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%= service.id %>" aria-controls="offcanvasRight">Schedule</button>
+
+                                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight<%= service.id %>" aria-labelledby="offcanvasRightLabel">
+                                                        <div class="offcanvas-header">
+                                                            <h5 id="offcanvasRightLabel">Service name: <%= service.name.capitalize %></h5>
+                                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="offcanvas-body">                                                        
+                                                            <%= form_tag update_schedule_services_path, method: :put, class: 'form-group', id: 'schedule-form' do %>
+                        
+                                                                <%= hidden_field_tag :time_zone_offset, nil %>
+
+                                                                <%= hidden_field_tag "services[#{service.id}][name]", service.name %>
+                                                                <%= hidden_field_tag "services[#{service.id}][service_id]", service.service_id %>
+                                                                <div class="text-center mb-2">
+                                                                    <%= label_tag :Start_time, nil, class: 'form-label' %>
+                                                                    <%= time_field_tag "services[#{service.id}][custom_start_time]", service.custom_start_time.strftime('%H:%M'), class: 'form-control text-center' %>
+                                                                </div>
+                                                                <div class="text-center">
+                                                                    <%= label_tag :End_time, nil, class: 'form-label' %>
+                                                                    <%= time_field_tag "services[#{service.id}][custom_stop_time]", service.custom_stop_time.strftime('%H:%M'), class: 'form-control text-center' %>
+                                                                </div>
+                                                                <div class="text-center"><%= submit_tag 'Update Schedule', class: 'btn btn-sm btn-outline-primary mt-4' %></div>                                                        
+                                                            <% end %>
+                                                        </div>
+                                                    </div>                                            
                                                     <%= button_to "Start", { action: :start_service, id: service.service_id }, method: :post, class: 'btn btn-sm btn-outline-success me-2' %>
                                                     <%= button_to "Stop", { action: :stop_service, id: service.service_id }, method: :post, class: 'btn btn-sm btn-outline-danger' %>
                                                 </div>            

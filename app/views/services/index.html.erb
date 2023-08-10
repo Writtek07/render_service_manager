@@ -24,7 +24,8 @@
                                         <th>Name</th>
                                         <th>Service ID</th>                                        
                                         <th>Status</th>
-                                        <th>Current Schedule(UTC)</th>                                        
+                                        <th>Current Schedule(UTC)</th>                                     
+                                        <th>Cancelled?</th>                                     
                                         <th class="text-center">Actions</th>
                                     </tr>
                                 </thead>
@@ -42,6 +43,13 @@
                                             </td>
                                             <td>
                                                 <%= service.custom_start_time.strftime("%I:%M %p") %> to <%= service.custom_stop_time.strftime("%I:%M %p") %> 
+                                            </td>
+                                            <td>
+                                                <% if service.schedule_removed? %> 
+                                                    <span class="badge bg-dark">Yes</span>
+                                                <% else %>
+                                                    <span class="badge bg-primary">No</span>
+                                                <% end %>
                                             </td>
                                             <td>
                                                 <div class="btn-group">

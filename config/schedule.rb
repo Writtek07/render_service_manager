@@ -5,12 +5,12 @@
 # List all crontabs scheduled in system: crontab -l
 # The above should run always when schedule is updated
 # Path is needed else output comes as bundle command not found
+env :GEM_PATH, '/usr/local/bundle'
 env :PATH, ENV['PATH']
 current_time = Time.now
 set :output, "./log/cron_#{current_time.to_s}.log"
-set :environment, 'development'
-set :user, 'root'
-
+#set :environment, 'development'
+# set :user, 'root'
 # Content will be added after these from services model
 
 every :day, at: '17:57' do

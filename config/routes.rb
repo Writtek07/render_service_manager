@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'update_crontab', to: 'services#update_crontab', as: :update_crontab
   post 'start_service/:id', to: 'services#start_service', as: :start_service
   post 'stop_service/:id', to: 'services#stop_service', as: :stop_service
+  post 'cancel_run/:id', to: 'services#remove_schedule', as: :remove_schedule
 
   get 'pages/index'
   # post 'start_service/:id', to: 'pages#start_service', as: :start_service

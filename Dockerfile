@@ -46,7 +46,8 @@ RUN yarn install --check-files
 RUN RAILS_ENV=production bundle exec rake assets:precompile
 RUN RAILS_ENV=production bundle exec rake assets:clean
 
-
+# Create crontab service
+RUN crontab -l | { cat; echo ""; } | crontab -
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["./bin/docker-entrypoint.sh"]

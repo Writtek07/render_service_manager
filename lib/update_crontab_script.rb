@@ -1,2 +1,3 @@
+require_relative '../config/environment'
 system('crontab -r')
-system("whenever --update-crontab --set environment='production'")
+Rails.env.production? ? system("whenever --update-crontab --set environment='production'") : system("whenever --update-crontab --set environment='development'")

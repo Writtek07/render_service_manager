@@ -13,14 +13,9 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
-  cron_job:
-    build: .
-    command: cron -f
-    depends_on:
-      - db
   web:
     build: .
-    command: "./bin/rails server"
+    command: "./bin/rails server && cron -f && bundle exec whenever --update-crontab --set environment='production'"
     environment:
       - RAILS_ENV=${RAILS_ENV}
       - POSTGRES_HOST=${POSTGRES_HOST}

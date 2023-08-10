@@ -6,4 +6,6 @@ if [ "${*}" == "./bin/rails server" ]; then
   ./bin/rails db:prepare
 fi
 
+cron && bundle exec whenever --set 'environment=production' --update-crontab
+
 exec "${@}"

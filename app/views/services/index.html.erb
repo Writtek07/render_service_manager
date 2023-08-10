@@ -4,8 +4,8 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-9 text-center">
-                        <h5>Remember to run this crontab update button post scheduling all the services</h5>                
-                        <p>Cron uses local time system to run the jobs, hence schedule the services, based on your local time zone time only</p>        
+                        <h5>Remember to run this crontab update button post scheduling all the services</h5>
+                        <p>Also, to schedule use UTC Times only </p>                            
                     </div>
                     <div class="col-3 mt-2">
                         <%= button_to "Update Crontab", { action: :update_crontab }, method: :post, class: 'btn btn-sm btn-success' %>
@@ -25,7 +25,7 @@
                                         <th>Name</th>
                                         <th>Service ID</th>                                        
                                         <th>Status</th>
-                                        <th>Current Schedule</th>                                        
+                                        <th>Current Schedule(UTC)</th>                                        
                                         <th class="text-center">Actions</th>
                                     </tr>
                                 </thead>
@@ -51,9 +51,10 @@
                                                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight<%= service.id %>" aria-labelledby="offcanvasRightLabel">
                                                         <div class="offcanvas-header">
                                                             <h5 id="offcanvasRightLabel">Service name: <%= service.name.capitalize %></h5>
+                                                            <h5 id="offcanvasRightLabel">Schedule the timings as per UTC Timezone</h5>
                                                             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                                         </div>
-                                                        <div class="offcanvas-body">                                                        
+                                                        <div class="offcanvas-body">                                                    
                                                             <%= form_tag update_schedule_services_path, method: :put, class: 'form-group', id: 'schedule-form' do %>
                         
                                                                 <%= hidden_field_tag :time_zone_offset, nil %>

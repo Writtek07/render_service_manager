@@ -1,9 +1,8 @@
-ARG RUBY_VERSION=3.2.1
-FROM ruby:$RUBY_VERSION
+FROM ruby:3.2.1-slim
 
 # Install libvips for Active Storage preview support
 RUN apt-get update -qq && \
-    apt-get install -y build-essential libvips bash bash-completion libffi-dev tzdata postgresql npm && \
+    apt-get install -y build-essential libpq-dev cron libvips bash bash-completion libffi-dev tzdata postgresql npm && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
 
@@ -46,7 +45,7 @@ RUN yarn install --check-files
 RUN RAILS_ENV=production bundle exec rake assets:precompile
 RUN RAILS_ENV=production bundle exec rake assets:clean
 
-# Create crontab service
+# Create crontab service by initializing with empty file
 RUN crontab -l | { cat; echo ""; } | crontab -
 
 # Entrypoint prepares the database.

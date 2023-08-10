@@ -17,13 +17,12 @@
 # Configuration
 * Clone the repo - `git clone git@github.com:Writtek07/render_service_manager.git`
 * Setup database and migration -`rails db:setup & rails db:migrate`
-* Start the server using - `bin/dev` for development purpose
+* Start the server using - `bin/rails s` for development purpose
 * The output is stored in `log/cron_date` file in the directory
 * Keep the server always running by: `rails s -p 3030` command and use `localhost:3030` on browser for the tool.
 * To stop the server: `ps aux| grep puma`, then kill the process id using `sudo kill -9 <pid>`
 
-# Note: `Currently there is an issue with detached mode server running, as in detached mode the crontabs aren't getting created.`
-            `Workaround is to run this service in a different port by commands mentioned above, so that it doesn't affect other projects`
+# Service now deployed on AWS.
 
 # Points to Remember
 * Server needs to keep running or cron tabs will throw error unable to connect to postgresql service.

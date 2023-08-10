@@ -27,10 +27,11 @@
 # Points to Remember
 * Server needs to keep running or cron tabs will throw error unable to connect to postgresql service.
 * Device being used can be kept in `lock screen` mode but not power off.(Tested on windows)
-* When you remove the db or migrate or reset the app to initial state, remember to update the lines added in `lib/services_cron_task.rake` and `config/schedule.rb`
+* When you remove the db or migrate or reset the app to initial state or want to set it for a new client, remember to remove the lines added in `lib/services_cron_task.rake` and `config/schedule.rb`
 * Check current set cron jobs by running `whenever` or `crontab -l` to list all currently added cron jobs to your system.
 * Dont forget to click `Update Crontab` button after all scheduling is done or crontabs wont be added to system and hence wont run at   scheduled times.
-* 
+* Curently all pushes, to remove the lines as suggested above, as the database will maintain the data client wise. 
+
 # References
 * https://www.rubyguides.com/2019/04/ruby-whenever-gem/
 * https://www.youtube.com/watch?v=JOCGWYGiZns&t=2s

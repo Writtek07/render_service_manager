@@ -3,11 +3,10 @@
         <div class="card mb-2">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-9 text-center">
-                        <h5>Remember to run this crontab update button post scheduling all the services</h5>
-                        <p>Also, to schedule use UTC Times only </p>                            
+                    <div class="col-sm-9 text-center">
+                        <h5>Remember to run this crontab update button post scheduling all the services</h5>                                               
                     </div>
-                    <div class="col-3 mt-2">
+                    <div class="col-sm-3 text-center">
                         <%= button_to "Update Crontab", { action: :update_crontab }, method: :post, class: 'btn btn-sm btn-success' %>
                     </div>
                 </div>
@@ -15,7 +14,7 @@
         </div>
         <div class="row container d-flex justify-content-center">
 
-            <div class="col-lg-11 grid-margin stretch-card">
+            <div class="col-sm-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">                        
                         <div class="table-responsive">
@@ -51,10 +50,9 @@
                                                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight<%= service.id %>" aria-labelledby="offcanvasRightLabel">
                                                         <div class="offcanvas-header">
                                                             <h5 id="offcanvasRightLabel">Service name: <%= service.name.capitalize %></h5>
-                                                            <h5 id="offcanvasRightLabel">Schedule the timings as per UTC Timezone</h5>
-                                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>                                                            
                                                         </div>
-                                                        <div class="offcanvas-body">                                                    
+                                                        <div class="offcanvas-body">                                                            
                                                             <%= form_tag update_schedule_services_path, method: :put, class: 'form-group', id: 'schedule-form' do %>
                         
                                                                 <%= hidden_field_tag :time_zone_offset, nil %>
@@ -69,10 +67,12 @@
                                                                     <%= label_tag :End_time, nil, class: 'form-label' %>
                                                                     <%= time_field_tag "services[#{service.id}][custom_stop_time]", service.custom_stop_time.strftime('%H:%M'), class: 'form-control text-center' %>
                                                                 </div>
-                                                                <div class="text-center"><%= submit_tag 'Update Schedule', class: 'btn btn-sm btn-outline-primary mt-4' %></div>                                                        
+                                                                <div class="text-center mt-2"><i>Schedule the timings as per UTC Timezone</i></div>
+                                                                <div class="text-center"><%= submit_tag 'Update Schedule', class: 'btn btn-sm btn-outline-primary mt-4' %></div>
                                                             <% end %>
                                                         </div>
-                                                    </div>                                            
+                                                    </div>
+                                                    <%= button_to "Cancel", { action: :remove_schedule, id: service.service_id }, method: :post, data: { confirm: "Are you sure you want to remove the schedule for #{service.name}?" }, class: "btn btn-sm btn-outline-dark me-2" %>
                                                     <%= button_to "Start", { action: :start_service, id: service.service_id }, method: :post, class: 'btn btn-sm btn-outline-success me-2' %>
                                                     <%= button_to "Stop", { action: :stop_service, id: service.service_id }, method: :post, class: 'btn btn-sm btn-outline-danger' %>
                                                 </div>            

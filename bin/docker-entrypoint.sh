@@ -4,6 +4,7 @@
 if [ "${*}" == "./bin/rails server" ]; then
   ./bin/rails db:create
   ./bin/rails db:prepare
+  ./bin/rails db:migrate
 fi
 
 cron && bundle exec whenever --set 'environment=production' --update-crontab
